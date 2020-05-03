@@ -7,6 +7,11 @@
 
 object Versions {
 
+    object Gradle {
+        const val core = "3.6.3"
+        const val kotlinPlugin = "1.3.72"
+    }
+
     object Kotlin {
         const val core = "1.3.72"
         const val extensions = "1.2.0"

@@ -8,6 +8,11 @@
 
 object Dependencies {
 
+    //gradle
+    const val gradle = "com.android.tools.build:gradle:${Versions.Gradle.core}"
+    const val gradleKotlinPlugin =
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Gradle.kotlinPlugin}"
+
     //kotlin
     const val kotlinCore = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.Kotlin.core}"
     const val kotlinExtension =
@@ -21,6 +26,7 @@ object Dependencies {
 
     //androidTests
     const val androidTest_junit = "androidx.test.ext:junit:${Versions.AndroidTest.junit}"
-    const val androidTest_espresso = "androidx.test.espresso:espresso-core:${Versions.AndroidTest.espresso}"
+    const val androidTest_espresso =
+        "androidx.test.espresso:espresso-core:${Versions.AndroidTest.espresso}"
 
 }
