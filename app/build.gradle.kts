@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
+    id("koin")
 }
 
 android {
@@ -36,6 +37,7 @@ dependencies {
     implementation(Dependencies.Kotlin.core)
     implementation(Dependencies.Kotlin.extension)
     implementation(Dependencies.Android.appCompact)
+    implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.ReactivePrograming.RxJava)
     implementation(Dependencies.Network.retrofit)
 
@@ -46,7 +48,15 @@ dependencies {
 
     implementation(Dependencies.ImageLoader.glide)
 
+    implementation(Dependencies.DependencyInjection.Koin.core)
+    implementation(Dependencies.DependencyInjection.Koin.android)
+    implementation(Dependencies.DependencyInjection.Koin.androidViewModel)
+    implementation(Dependencies.DependencyInjection.Koin.androidScope)
+
+    implementation(Dependencies.Logger.timber)
+
     testImplementation(Dependencies.Test.junit)
+    testImplementation(Dependencies.Test.koin_helper)
 
     androidTestImplementation(Dependencies.AndroidTests.junit)
     androidTestImplementation(Dependencies.AndroidTests.espresso)

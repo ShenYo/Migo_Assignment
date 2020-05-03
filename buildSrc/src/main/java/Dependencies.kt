@@ -18,9 +18,9 @@ object Dependencies {
             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.Kotlin.extensions}"
     }
 
-
     object Android {
         const val appCompact = "androidx.appcompat:appcompat:${Versions.Android.appCompact}"
+        const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.Android.constraintLayout}"
     }
 
     object ReactivePrograming {
@@ -44,9 +44,24 @@ object Dependencies {
         const val glide = "com.github.bumptech.glide:glide:${Versions.ImageLoader.glide}"
     }
 
+    object DependencyInjection {
+         object Koin {
+             const val gradlePlugin = "org.koin:koin-gradle-plugin:${Versions.DependencyInjection.koin}"
+             const val core = "org.koin:koin-core:${Versions.DependencyInjection.koin}"
+             const val android = "org.koin:koin-android:${Versions.DependencyInjection.koin}"
+             const val androidScope = "org.koin:koin-androidx-scope:${Versions.DependencyInjection.koin}"
+             const val androidViewModel = "org.koin:koin-androidx-viewmodel:${Versions.DependencyInjection.koin}"
+         }
+    }
+
+    object Logger {
+        const val timber = "com.jakewharton.timber:timber:${Versions.Logger.timber}"
+    }
+
     object Test {
         const val junit = "junit:junit:${Versions.Test.junit}"
         const val room_helper = "androidx.room:room-testing:${Versions.Database.room}"
+        const val koin_helper = "org.koin:koin-test:${Versions.DependencyInjection.koin}"
     }
 
     object AndroidTests {

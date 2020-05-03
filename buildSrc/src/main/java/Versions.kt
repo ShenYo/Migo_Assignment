@@ -19,6 +19,7 @@ object Versions {
 
     object Android {
         const val appCompact = "1.1.0"
+        const val constraintLayout = "1.1.3"
     }
 
     object ReactivePrograming {
@@ -33,8 +34,16 @@ object Versions {
         const val room = "2.2.5"
     }
 
+    object DependencyInjection {
+        const val koin = "2.1.5"
+    }
+
     object ImageLoader {
         const val glide = "4.11.0"
+    }
+
+    object Logger {
+        const val timber = "4.7.1"
     }
 
     object Test {
