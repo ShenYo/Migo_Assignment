@@ -1,2 +1,10 @@
 # Android-interview-assignment-base
-base configuration for android interview assignment
+
+- Architecture: `MVVM`
+
+- Library: 
+  - Dependcy Injection: `Koin`
+  - FrameWork: `RxJava2`
+  - Netwrok: `Retrofit`
+  - Database: `Room`
+  - Image Loader: `Glide`
