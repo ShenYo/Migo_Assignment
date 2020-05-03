@@ -54,5 +54,4 @@ object Dependencies {
         const val espresso =
             "androidx.test.espresso:espresso-core:${Versions.AndroidTest.espresso}"
     }
-
 }
