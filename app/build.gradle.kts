@@ -1,8 +1,8 @@
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
+    id("kotlin-kapt")
 }
 
 android {
@@ -28,17 +28,26 @@ android {
             )
         }
     }
-
 }
 
 dependencies {
     implementation(fileTree("dir" to "libs", "include" to listOf("*.jar")))
-    implementation(Dependencies.kotlinCore)
-    implementation(Dependencies.androidAppCompact)
-    implementation(Dependencies.kotlinExtension)
 
-    testImplementation(Dependencies.test_junit)
+    implementation(Dependencies.Kotlin.core)
+    implementation(Dependencies.Kotlin.extension)
+    implementation(Dependencies.Android.appCompact)
+    implementation(Dependencies.ReactivePrograming.RxJava)
+    implementation(Dependencies.Network.retrofit)
 
-    androidTestImplementation(Dependencies.androidTest_junit)
-    androidTestImplementation(Dependencies.androidTest_espresso)
+    implementation(Dependencies.Database.Room.core)
+    implementation(Dependencies.Database.Room.kotlin_extension)
+    implementation(Dependencies.Database.Room.rxjava)
+    kapt(Dependencies.Database.Room.compiler)
+
+    implementation(Dependencies.ImageLoader.glide)
+
+    testImplementation(Dependencies.Test.junit)
+
+    androidTestImplementation(Dependencies.AndroidTests.junit)
+    androidTestImplementation(Dependencies.AndroidTests.espresso)
 }

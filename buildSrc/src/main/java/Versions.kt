@@ -21,6 +21,22 @@ object Versions {
         const val appCompact = "1.1.0"
     }
 
+    object ReactivePrograming {
+        const val RxJava = "3.0.3"
+    }
+
+    object Network {
+        const val retrofit = "2.8.1"
+    }
+
+    object Database {
+        const val room = "2.2.5"
+    }
+
+    object ImageLoader {
+        const val glide = "4.11.0"
+    }
+
     object Test {
         const val junit = "4.12"
     }
