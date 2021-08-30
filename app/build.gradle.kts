@@ -8,7 +8,16 @@ plugins {
 
 android {
     compileSdkVersion(29)
-    buildToolsVersion = "29.0.2"
+    buildToolsVersion = "29.0.3"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 
     defaultConfig {
         applicationId = "com.lance.baseassigment"
@@ -18,6 +27,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "PUBLIC_API_ROOT", "\"https://code-test.migoinc-dev.com\"")
+        buildConfigField("String", "PRIVATE_API_ROOT", "\"https://192.168.2.2\"")
     }
 
     buildTypes {
@@ -39,12 +51,10 @@ dependencies {
     implementation(Dependencies.Android.appCompact)
     implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.ReactivePrograming.RxJava)
-    implementation(Dependencies.Network.retrofit)
-
-    implementation(Dependencies.Database.Room.core)
-    implementation(Dependencies.Database.Room.kotlin_extension)
-    implementation(Dependencies.Database.Room.rxjava)
-    kapt(Dependencies.Database.Room.compiler)
+    implementation(Dependencies.ReactivePrograming.RxAndroid)
+    implementation(Dependencies.Network.Retrofit.retrofit)
+    implementation(Dependencies.Network.Retrofit.adapterRxJava2)
+    implementation(Dependencies.Network.Retrofit.gsonConvertor)
 
     implementation(Dependencies.ImageLoader.glide)
 
@@ -56,8 +66,12 @@ dependencies {
     implementation(Dependencies.Logger.timber)
 
     testImplementation(Dependencies.Test.junit)
+    testImplementation(Dependencies.Test.mockk)
     testImplementation(Dependencies.Test.koin_helper)
 
     androidTestImplementation(Dependencies.AndroidTests.junit)
-    androidTestImplementation(Dependencies.AndroidTests.espresso)
+    androidTestImplementation(Dependencies.Test.mockk_Android)
+    androidTestImplementation(Dependencies.Test.koin_helper)
+    androidTestImplementation(Dependencies.AndroidTests.testRules)
+    androidTestImplementation(Dependencies.AndroidTests.testRunner)
 }

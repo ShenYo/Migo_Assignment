@@ -20,15 +20,24 @@ object Dependencies {
 
     object Android {
         const val appCompact = "androidx.appcompat:appcompat:${Versions.Android.appCompact}"
-        const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.Android.constraintLayout}"
+        const val constraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Versions.Android.constraintLayout}"
     }
 
     object ReactivePrograming {
-        const val RxJava = "io.reactivex.rxjava3:rxjava:${Versions.ReactivePrograming.RxJava}"
+        const val RxJava = "io.reactivex.rxjava2:rxjava:${Versions.ReactivePrograming.RxJava}"
+        const val RxAndroid =
+            "io.reactivex.rxjava2:rxandroid:${Versions.ReactivePrograming.RxAndroid}"
     }
 
     object Network {
-        const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.Network.retrofit}"
+        object Retrofit {
+            const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.Network.retrofit}"
+            const val gsonConvertor =
+                "com.squareup.retrofit2:converter-gson:${Versions.Network.retrofit}"
+            const val adapterRxJava2 =
+                "com.squareup.retrofit2:adapter-rxjava2:${Versions.Network.retrofit}"
+        }
     }
 
     object Database {
@@ -45,13 +54,16 @@ object Dependencies {
     }
 
     object DependencyInjection {
-         object Koin {
-             const val gradlePlugin = "org.koin:koin-gradle-plugin:${Versions.DependencyInjection.koin}"
-             const val core = "org.koin:koin-core:${Versions.DependencyInjection.koin}"
-             const val android = "org.koin:koin-android:${Versions.DependencyInjection.koin}"
-             const val androidScope = "org.koin:koin-androidx-scope:${Versions.DependencyInjection.koin}"
-             const val androidViewModel = "org.koin:koin-androidx-viewmodel:${Versions.DependencyInjection.koin}"
-         }
+        object Koin {
+            const val gradlePlugin =
+                "org.koin:koin-gradle-plugin:${Versions.DependencyInjection.koin}"
+            const val core = "org.koin:koin-core:${Versions.DependencyInjection.koin}"
+            const val android = "org.koin:koin-android:${Versions.DependencyInjection.koin}"
+            const val androidScope =
+                "org.koin:koin-androidx-scope:${Versions.DependencyInjection.koin}"
+            const val androidViewModel =
+                "org.koin:koin-androidx-viewmodel:${Versions.DependencyInjection.koin}"
+        }
     }
 
     object Logger {
@@ -60,11 +72,15 @@ object Dependencies {
 
     object Test {
         const val junit = "junit:junit:${Versions.Test.junit}"
+        const val mockk = "io.mockk:mockk:${Versions.Test.mockk}"
+        const val mockk_Android = "io.mockk:mockk-android:${Versions.Test.mockk}"
         const val room_helper = "androidx.room:room-testing:${Versions.Database.room}"
         const val koin_helper = "org.koin:koin-test:${Versions.DependencyInjection.koin}"
     }
 
     object AndroidTests {
+        const val testRules = "androidx.test:rules:${Versions.AndroidTest.testRunner}"
+        const val testRunner = "androidx.test:runner:${Versions.AndroidTest.testRule}"
         const val junit = "androidx.test.ext:junit:${Versions.AndroidTest.junit}"
         const val espresso =
             "androidx.test.espresso:espresso-core:${Versions.AndroidTest.espresso}"

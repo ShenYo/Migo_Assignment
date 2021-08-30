@@ -1,8 +1,10 @@
 package com.lance.baseassigment
 
 import android.app.Application
+import com.lance.baseassigment.diConfigurations.modules.*
+import com.lance.baseassigment.diConfigurations.modules.networkModule
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import org.koin.core.module.Module
 
 /**
  * Description:
@@ -21,7 +23,10 @@ class AppContext : Application() {
 
     private fun init() {
         startKoin {
-            listOf<Module>()
+            androidContext(this@AppContext)
+            modules(
+                mainPageModule, networkModule, datasourceModule, domainModule, utilModule
+            )
         }
     }
 }

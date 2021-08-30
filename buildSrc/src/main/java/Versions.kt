@@ -8,7 +8,7 @@
 object Versions {
 
     object Gradle {
-        const val core = "3.6.3"
+        const val core = "3.5.1"
         const val kotlinPlugin = "1.3.72"
     }
 
@@ -23,7 +23,8 @@ object Versions {
     }
 
     object ReactivePrograming {
-        const val RxJava = "3.0.3"
+        const val RxJava = "2.2.8"
+        const val RxAndroid = "2.1.1"
     }
 
     object Network {
@@ -47,11 +48,14 @@ object Versions {
     }
 
     object Test {
+        const val mockk = "1.12.0"
         const val junit = "4.12"
     }
 
     object AndroidTest {
         const val junit = "1.1.1"
         const val espresso = "3.2.0"
+        const val testRunner = "1.2.0"
+        const val testRule = "1.2.0"
     }
 }
